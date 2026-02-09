@@ -242,6 +242,26 @@
             box-shadow: 0 2px 8px rgba(255, 61, 0, 0.4);
         }
 
+        /* Botões internos para o cartão Movida */
+        .split-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .split-btn:active {
+            transform: scale(0.95);
+        }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -784,7 +804,6 @@
 
 <div class="container">
 
-    <!-- DESTAQUE: Guia de Bolso -->
     <button class="card-btn card-featured" onclick="openGuide()" style="width:100%; margin-bottom: 24px;">
         <span class="click-badge">👆 CLIQUE AQUI</span>
         <div class="icon-box">📘</div>
@@ -795,7 +814,6 @@
         <span class="arrow-icon">→</span>
     </button>
 
-    <!-- SEÇÃO: Metas & Resultados -->
     <div class="section-title">📊 Metas & Resultados</div>
     <div class="link-grid">
         <a href="https://app.powerbi.com/groups/me/reports/ceeb683b-3faa-48d1-8bc2-f5e8013a2465/e5563a8a33d3c2d31504?experience=power-bi" target="_blank" class="card-btn style-bi">
@@ -835,7 +853,6 @@
         </a>
     </div>
 
-    <!-- SEÇÃO: Sistemas & Contatos -->
     <div class="section-title">📱 Sistemas & Contatos</div>
     <div class="link-grid">
         <a href="https://hymparhub.com.br/login" target="_blank" class="card-btn style-sys">
@@ -843,6 +860,24 @@
             <div class="card-info">
                 <h3>Hympar Hub</h3>
                 <p>Pedidos</p>
+            </div>
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <a href="https://performancemanager4.successfactors.com/sf/home?bplte_company=RHGENTEGESTAO&_s.crb=jT3YNUZJsma9%2fzN24hZ2ktVBe8aezfC%2fZBw9ch4X94M%3d" target="_blank" class="card-btn style-bi">
+            <div class="icon-box">👥</div>
+            <div class="card-info">
+                <h3>Gente & Gestão</h3>
+                <p>RH Portal</p>
+            </div>
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <a href="https://sabermais.learning.rocks/login?redirect=%2Fmissions%2FUag0ePFBqrkoLblKNbCR" target="_blank" class="card-btn style-sys">
+            <div class="icon-box">🎓</div>
+            <div class="card-info">
+                <h3>Saber Mais</h3>
+                <p>Universidade Corp.</p>
             </div>
             <span class="arrow-icon">→</span>
         </a>
@@ -865,25 +900,33 @@
             <span class="arrow-icon">→</span>
         </a>
 
-        <a href="tel:08007222212" class="card-btn style-phone">
-            <div class="icon-box">📞</div>
-            <div class="card-info">
-                <h3>Movida <span class="phone-badge">☎️ LIGAR</span></h3>
-                <p>Central de Atendimento</p>
+        <div class="card-btn style-phone" style="display: block; padding: 16px; cursor: default;">
+            <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                 <div class="icon-box">🚗</div>
+                 <div class="card-info">
+                     <h3>Movida</h3>
+                     <p>Central de Atendimento</p>
+                 </div>
             </div>
-            <span class="arrow-icon">→</span>
-        </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="tel:08007222212" class="split-btn" style="background: white; color: #00c853;">
+                    📞 Ligar
+                </a>
+                <a href="https://wa.me/5511932322021" target="_blank" class="split-btn" style="background: #25D366; color: white;">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<!-- MODAL FULLSCREEN (GUIA DE BOLSO) -->
 <div id="guideModal" class="modal-full">
     <div class="guide-header">
         <h2>📖 Guia Hyperselling 5.0</h2>
         <button class="close-guide" onclick="closeGuide()">×</button>
     </div>
 
-    <!-- NAVEGAÇÃO INTERNA -->
     <div class="guide-nav">
         <button class="nav-pill active" onclick="showTab('tab-plan')">1. Planejamento</button>
         <button class="nav-pill" onclick="showTab('tab-flow')">2. Fluxo Visita</button>
@@ -891,7 +934,6 @@
         <button class="nav-pill" onclick="showTab('tab-obj')">4. 3Ds & Pós</button>
     </div>
 
-    <!-- CONTEÚDO: PLANEJAMENTO -->
     <div id="tab-plan" class="guide-content active">
         <div class="hys-card">
             <div class="hys-title">📋 Etapas do Planejamento</div>
@@ -942,7 +984,6 @@
         </div>
     </div>
 
-    <!-- CONTEÚDO: FLUXO DE VISITA -->
     <div id="tab-flow" class="guide-content">
         <div class="hys-card">
             <div class="hys-title">🎯 Estrutura do Contato (Flow)</div>
@@ -995,7 +1036,6 @@
         </div>
     </div>
 
-    <!-- CONTEÚDO: MODELOS PSP/PSC -->
     <div id="tab-model" class="guide-content">
         
         <div class="hys-card" style="border-left-color: #d32f2f;">
@@ -1078,7 +1118,6 @@
         </div>
     </div>
 
-    <!-- CONTEÚDO: OBJEÇÕES & CRM -->
     <div id="tab-obj" class="guide-content">
         <div class="hys-card">
             <div class="hys-title">🛡️ Tratamento de Objeções (3Ds)</div>
